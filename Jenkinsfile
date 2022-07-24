@@ -10,7 +10,7 @@ pipeline {
 	stage('Create Docker file'){
              agent { label 'linux' }
 	     steps{
-                sh 'pwd'
+                sh 'docker build -t mydotnet:latest .'
             }
             
         }
