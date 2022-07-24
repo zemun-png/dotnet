@@ -1,3 +1,3 @@
 FROM nginx
 WORKDIR /app
-COPY  * ./
+COPY  netcoreapp2.2/* ./
