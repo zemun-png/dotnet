@@ -8,4 +8,11 @@ pipeline {
             
         }
     }
+	stage('Create Docker file'){
+            steps{
+                sh 'docker build -d'
+            }
+            
+        }
+    }
 }
