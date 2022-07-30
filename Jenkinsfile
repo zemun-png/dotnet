@@ -2,13 +2,15 @@ pipeline {
     agent any   
     stages {
        stage('SonarQube Analysis') {
+	       steps{
        def scannerHome = tool 'SonarScanner for MSBuild'
        withSonarQubeEnv() {
           bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"test_1\""
           bat "dotnet build"
           bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
-        }
-      }
+          }
+         }
+       }
 	stage('Compile Source codes '){
             steps{
                 build job: 'dotnet'
