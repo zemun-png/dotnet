@@ -8,7 +8,6 @@ pipeline {
           bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
         }
       }
-    }
  
    
     stages {
